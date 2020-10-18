@@ -37,9 +37,39 @@ const verifyPostData = function (req, res, next) {
   return next();
 };
 
+const restartProcess = function () {
+	spawn(process.argv[1], process.argv.slice(2), {
+		detached: true,
+		stdio: [ 'ignore', out, err ]
+	}).unref();
+	process.exit();
+};
+
+// A function to support asynchronous execution of OS commands.
+const execShellCommand = function (cmd) {
+	const exec = require('child_process').exec;
+	return new Promise((resolve, reject) => {
+		exec(cmd, (error, stdout, stderr) => {
+			if (error) {
+				console.warn(error);
+			}
+			resolve(stdout? stdout : stderr);
+		});
+	});
+};
+
 // Detect the pushed webhook for our server repo from GitHub.
-app.post('/', verifyPostData, function (req, res) {
-	console.log(req.body);
+app.post('/', verifyPostData, async function (req, res) {
+	let commitId = req.body.after.substring(0, 12);
+	console.log(commitId);
+
+	// Update the repository locally.
+	await execShellCommand('git pull');
+
+	// Restart this listening server.
+	restartProcess();
+
+	// Tell GitHub we completed the request.
   res.status(200).send('Request body was signed.');
 });
 
