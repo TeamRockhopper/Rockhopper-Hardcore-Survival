@@ -39,7 +39,7 @@ const verifyPostData = function (req, res, next) {
 
 // Detect the pushed webhook for our server repo from GitHub.
 app.post('/', verifyPostData, function (req, res) {
-	console.log(req);
+	console.log(req.body);
   res.status(200).send('Request body was signed.');
 });
 
