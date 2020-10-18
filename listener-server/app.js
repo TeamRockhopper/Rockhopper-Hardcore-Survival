@@ -77,8 +77,8 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Updated the listener server ...`);
 
 		// Delete any local upload from the pack.
-		await execShellCommand('rm -rf ../launcher/upload/');
-		console.log(`  >  Removed old modpack build files ...`);
+		await execShellCommand('rm -rf upload/');
+		console.log(`  >  Removed old local modpack build files ...`);
 
 		// Build the updated modpack into files for uploading.
 		await execShellCommand(`java -jar ../launcher/builder.jar --version "${commitId}" --input ../modpack-files/ --output upload --manifest-dest "upload/rockhopper.json"`);
@@ -100,6 +100,17 @@ app.post('/', verifyPostData, async function (req, res) {
 		const json = JSON.stringify(packageData, null, 2);
 		await fs.writeFile('upload/packages.json', json)
 		console.log(`  >  Wrote updated package listing to file ...`);
+
+		// Delete the web-hosted upload files for the pack.
+		await execShellCommand('rm -rf /var/www/rockhopper/minecraft/pack/');
+		console.log(`  >  Removed old web-hosted modpack build files ...`);
+
+		// Copy our new local build files to the web upload location.
+		await execShellCommand('cp ../launcher/upload/ /var/www/rockhopper/minecraft/pack/');
+		console.log(`  >  Deployed new modpack build to web for download ...`);
+
+		// All done!
+		console.log(`  >  Modpack update complete!`);
 
 	// Catch any errors that might occur in the modpack updating process and log them.
 	} catch (error) {
