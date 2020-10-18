@@ -7,6 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exec = require('child_process').exec;
 const spawn = require('child_process').spawn;
+const fs = require('fs');
 
 // Application setup.
 const app = express();
