@@ -64,7 +64,6 @@ const execShellCommand = function (cmd) {
 // Detect the pushed webhook for our server repo from GitHub.
 app.post('/', verifyPostData, async function (req, res) {
 	try {
-		console.log('');
 		let commitId = req.body.after.substring(0, 12);
 		console.log(`  >  Detected new commit ${commitId} ...`);
 
@@ -119,6 +118,7 @@ app.post('/', verifyPostData, async function (req, res) {
 	}
 
 	// Restart this listening server.
+	console.log('');
 	restartProcess();
 
 	// Tell GitHub we completed the request.
