@@ -13,10 +13,8 @@ const fs = require('fs-extra');
 const app = express();
 app.use(express.static('static'));
 app.set('view engine', 'ejs');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-	extended: true
-}));
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // Parsing out environment variables.
 const APPLICATION = process.env.APPLICATION;
