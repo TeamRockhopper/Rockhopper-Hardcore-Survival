@@ -62,7 +62,7 @@ const execShellCommand = function (cmd) {
 app.post('/', verifyPostData, async function (req, res) {
 	let commitId = req.body.after.substring(0, 12);
 	console.log(commitId);
-	console.log(2);
+	console.log(3);
 
 	// Update the repository locally.
 	await execShellCommand('git pull');
