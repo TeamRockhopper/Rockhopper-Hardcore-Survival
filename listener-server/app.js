@@ -105,7 +105,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Removed old web-hosted modpack build files ...`);
 
 		// Copy our new local build files to the web upload location.
-		await execShellCommand('cp ../launcher/upload/ /var/www/rockhopper/minecraft/pack/');
+		await execShellCommand('cp upload/ /var/www/rockhopper/minecraft/pack/');
 		console.log(`  >  Deployed new modpack build to web for download ...`);
 
 		// All done!
