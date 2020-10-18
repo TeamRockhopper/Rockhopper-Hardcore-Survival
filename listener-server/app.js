@@ -5,6 +5,8 @@ require('dotenv').config();
 const crypto = require('crypto');
 const express = require('express');
 const bodyParser = require('body-parser');
+const exec = require('child_process').exec;
+const spawn = require('child_process').spawn;
 
 // Application setup.
 const app = express();
@@ -47,7 +49,6 @@ const restartProcess = function () {
 
 // A function to support asynchronous execution of OS commands.
 const execShellCommand = function (cmd) {
-	const exec = require('child_process').exec;
 	return new Promise((resolve, reject) => {
 		exec(cmd, (error, stdout, stderr) => {
 			if (error) {
