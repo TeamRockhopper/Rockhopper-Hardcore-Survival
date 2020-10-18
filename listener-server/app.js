@@ -7,7 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exec = require('child_process').exec;
 const spawn = require('child_process').spawn;
-const fs = require('fs');
+const fs = require('fs-extra');
 
 // Application setup.
 const app = express();
@@ -65,12 +65,49 @@ const execShellCommand = function (cmd) {
 
 // Detect the pushed webhook for our server repo from GitHub.
 app.post('/', verifyPostData, async function (req, res) {
-	let commitId = req.body.after.substring(0, 12);
-	console.log(commitId);
-	console.log(10);
+	try {
+		console.log('');
+		let commitId = req.body.after.substring(0, 12);
+		console.log(`  >  Detected new commit ${commitId} ...`);
 
-	// Update the repository locally.
-	await execShellCommand('git pull');
+		// Update the repository locally.
+		await execShellCommand('git pull');
+		console.log(`  >  Pulled most recent files from git ...`);
+
+		// Install any potentially-new dependencies.
+		await execShellCommand('npm install');
+		console.log(`  >  Updated the listener server ...`);
+
+		// Delete any local upload from the pack.
+		await execShellCommand('rm -rf ../launcher/upload/');
+		console.log(`  >  Removed old modpack build files ...`);
+
+		// Build the updated modpack into files for uploading.
+		await execShellCommand(`java -jar ../launcher/builder.jar --version "${commitId}" --input ../modpack-files/ --output upload --manifest-dest "upload/rockhopper.json"`);
+		console.log(`  >  Built updated modpack ...`);
+
+		// Create a package listing for the updated modpack.
+		let packageData = {
+	  	minimumVersion: 1,
+			packages: [
+		    {
+		      title: 'Rockhopper Modded Survival',
+		      name: 'rockhopper',
+		      version: `${commitId}`,
+		      location: 'rockhopper.json',
+		      priority: 0
+		    }
+		  ]
+		};
+		const json = JSON.stringify(packageData, null, 2);
+		await fs.writeFile('upload/packages.json', json)
+		console.log(`  >  Wrote updated package listing to file ...`);
+
+	// Catch any errors that might occur in the modpack updating process and log them.
+	} catch (error) {
+		console.log(`  >  An error occurred when attempting modpack update!`);
+		console.error(error);
+	}
 
 	// Restart this listening server.
 	restartProcess();
