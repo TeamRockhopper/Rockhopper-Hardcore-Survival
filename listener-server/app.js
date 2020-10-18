@@ -52,7 +52,7 @@ const restartProcess = function () {
 // A function to support asynchronous execution of OS commands.
 const execShellCommand = function (cmd) {
 	return new Promise((resolve, reject) => {
-		exec(cmd, (error, stdout, stderr) => {
+		exec(cmd, { maxBuffer: 2 * 1024 * 1024 * 1000 }, (error, stdout, stderr) => {
 			if (error) {
 				console.warn(error);
 			}
