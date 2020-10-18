@@ -44,7 +44,7 @@ const restartProcess = function () {
 	const logfile = 'listener-restart.log';
 	const out = fs.openSync(logfile, 'a');
 	const err = fs.openSync(logfile, 'a');
-	spawn(process.argv[1], process.argv.slice(2), {
+	spawn(process.argv[0], process.argv.slice(1), {
 		detached: true,
 		stdio: [ 'ignore', out, err ]
 	}).unref();
