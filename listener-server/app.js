@@ -40,8 +40,12 @@ const verifyPostData = function (req, res, next) {
 };
 
 const restartProcess = function () {
+	const logfile = 'listener-restart.log';
+	const out = fs.openSync(logfile, 'a');
+	const err = fs.openSync(logfile, 'a');
 	spawn(process.argv[1], process.argv.slice(2), {
-		detached: true
+		detached: true,
+		stdio: [ 'ignore', out, err ]
 	}).unref();
 	process.exit();
 };
@@ -62,7 +66,7 @@ const execShellCommand = function (cmd) {
 app.post('/', verifyPostData, async function (req, res) {
 	let commitId = req.body.after.substring(0, 12);
 	console.log(commitId);
-	console.log(3);
+	console.log(4);
 
 	// Update the repository locally.
 	await execShellCommand('git pull');
