@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const exec = require('child_process').exec;
 const spawn = require('child_process').spawn;
 const fs = require('fs-extra');
+const Rcon = require('rcon-client').Rcon;
 
 // Application setup.
 const app = express();
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 const APPLICATION = process.env.APPLICATION;
 const PORT = process.env.PORT;
 const SECRET = process.env.SECRET;
+const RCON_PASSWORD = process.env.RCON_PASSWORD;
 
 // A middleware for validating webhooks from GitHub.
 const sigHeaderName = 'X-Hub-Signature';
@@ -117,7 +119,11 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Built updated server files ...`);
 
 		// Count-down, save, and stop the Minecraft server.
-		await execShellCommand('screen -r -d rockhopper-modded; say automated beep');
+		// TODO.
+		const rcon = await Rcon.connect({
+			host: 'localhost', port: 4000, password: `${RCON_PASSWORD}`
+		});
+		console.log(await rcon.send("list"));
 		console.log(`  >  Stopped the Minecraft server ...`);
 
 		// Delete the mods and configuration files that are present on the server.
@@ -144,7 +150,6 @@ app.post('/', verifyPostData, async function (req, res) {
 
 	// Restart this listening server.
 	console.log('');
-	restartProcess();
 
 	// Tell GitHub we completed the request.
   res.status(200).send('Request body was signed.');

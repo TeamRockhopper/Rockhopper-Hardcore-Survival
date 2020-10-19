@@ -1,3 +1,4 @@
 APPLICATION=Rockhopper Server Listener
 PORT=3000
 SECRET=
+RCON_PASSWORD=
