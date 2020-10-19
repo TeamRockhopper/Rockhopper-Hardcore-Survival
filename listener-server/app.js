@@ -77,6 +77,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Detected new commit ${commitId} ...`);
 
 		// Forcefully update the repository locally.
+		await execShellCommand('git fetch');
 		await execShellCommand('git reset --hard origin/master');
 		console.log(`  >  Pulled most recent files from git ...`);
 
