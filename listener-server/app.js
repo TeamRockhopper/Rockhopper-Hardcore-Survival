@@ -76,6 +76,10 @@ app.post('/', verifyPostData, async function (req, res) {
 		let commitId = req.body.after.substring(0, 12);
 		console.log(`  >  Detected new commit ${commitId} ...`);
 
+		// To ensure we do not use stale modpack information, delete it.
+		await execShellCommand('rm -rf ../modpack-files/src/');
+		console.log(`  >  Deleted previous local modpack content ...`);
+
 		// Forcefully update the repository locally.
 		await execShellCommand('git fetch');
 		await execShellCommand('git reset --hard origin/master');
@@ -127,31 +131,37 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Built updated server files ...`);
 
 		// Count-down, save, and stop the Minecraft server.
-		const rcon = await Rcon.connect({
-			host: 'localhost', port: 4000, password: `${RCON_PASSWORD}`
-		});
-		await rcon.send('say There has been a modpack update.');
-		await sleep(500);
-		await rcon.send('say Please update your modpack client using the launcher.');
-		await sleep(500);
-		await rcon.send('say The server will restart in 30 seconds.');
-		await sleep(5000);
-		await rcon.send('say The server will restart in 25 seconds.');
-		await sleep(5000);
-		await rcon.send('say The server will restart in 20 seconds.');
-		await sleep(5000);
-		await rcon.send('say The server will restart in 15 seconds.');
-		await sleep(5000);
-		await rcon.send('say The server will restart in 10 seconds.');
-		await sleep(5000);
-		await rcon.send('say The server will restart in 5 seconds.');
-		await sleep(5000);
-		await rcon.send('say The server is restarting now!');
-		await sleep(500);
-		await rcon.send('save-all');
-		await rcon.send('stop');
-		await rcon.end();
-		console.log(`  >  Stopped the Minecraft server ...`);
+		try {
+			const rcon = await Rcon.connect({
+				host: 'localhost', port: 4000, password: `${RCON_PASSWORD}`
+			});
+			await rcon.send('say There has been a modpack update.');
+			await sleep(500);
+			await rcon.send('say Please update your modpack client using the launcher.');
+			await sleep(500);
+			await rcon.send('say The server will restart in 30 seconds.');
+			await sleep(5000);
+			await rcon.send('say The server will restart in 25 seconds.');
+			await sleep(5000);
+			await rcon.send('say The server will restart in 20 seconds.');
+			await sleep(5000);
+			await rcon.send('say The server will restart in 15 seconds.');
+			await sleep(5000);
+			await rcon.send('say The server will restart in 10 seconds.');
+			await sleep(5000);
+			await rcon.send('say The server will restart in 5 seconds.');
+			await sleep(5000);
+			await rcon.send('say The server is restarting now!');
+			await sleep(500);
+			await rcon.send('save-all');
+			await rcon.send('stop');
+			await rcon.end();
+			console.log(`  >  Stopped the Minecraft server ...`);
+
+		// The Minecraft server may not be running; catch this error and continue.
+		} catch (rconError) {
+			console.log(`  >  RCON error; the Minecraft server is probably not running ...`);
+		}
 
 		// Delete the mods and configuration files that are present on the server.
 		await execShellCommand('rm -rf ~/mc-rockhopper-survival/mods/');
