@@ -148,6 +148,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		await rcon.send('say The server is restarting now!');
 		await sleep(500);
 		await rcon.send('save-all');
+		await rcon.send('stop');
 		await rcon.end();
 		console.log(`  >  Stopped the Minecraft server ...`);
 
@@ -161,7 +162,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Copied new server content to the server ...`);
 
 		// Restart the server.
-		await execShellCommand('~/mc-rockhopper-survival/start_server.sh');
+		// await execShellCommand('cd ~/mc-rockhopper-survival; ~/mc-rockhopper-survival/start_server.sh');
 		console.log(`  >  Restarted the Minecraft server ...`);
 
 		// All done!
