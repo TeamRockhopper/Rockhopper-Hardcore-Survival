@@ -148,7 +148,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		await rcon.send('say The server is restarting now!');
 		await sleep(500);
 		await rcon.send('save-all');
-		await rcon.send('stop');
+		await rcon.end();
 		console.log(`  >  Stopped the Minecraft server ...`);
 
 		// Delete the mods and configuration files that are present on the server.
