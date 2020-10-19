@@ -1,5 +1,6 @@
 # Ignore the compiled modpack output.
 upload
+server-upload
 
 # Ignore unwanted Node.js content.
 node_modules/

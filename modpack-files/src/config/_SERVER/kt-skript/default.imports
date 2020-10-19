@@ -1,0 +1,14 @@
+!!
+
+kotlin
+-kotlin.reflect
+-kotlin.internal
+
+java
+-java.awt
+-java.applet
+
+de.randombyte.ktskript
+-de.randombyte.ktskript.shaded
+
+org.spongepowered.api

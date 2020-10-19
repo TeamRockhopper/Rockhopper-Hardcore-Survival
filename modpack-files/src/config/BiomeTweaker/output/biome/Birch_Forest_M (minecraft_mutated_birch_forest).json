@@ -20,12 +20,12 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
+    "SUPER_BIRCH_TREES",
+    "HILLS",
+    "FOREST",
     "DENSE",
     "RARE",
-    "FOREST",
-    "HILLS",
-    "THEMED_TREES",
-    "SUPER_BIRCH_TREES"
+    "THEMED_TREES"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -111,13 +111,13 @@
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityDweller",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityAshen",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     }

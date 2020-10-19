@@ -1,0 +1,13 @@
+// For more info visit https://github.com/FTBTeam/FTB-Ranks/wiki
+
+[player]
+power: 1
+default_player_rank: true
+command.toughasnails.toughasnails.tempinfo: true
+command.minecolonies.colony.delete: true
+ftbutilities.claims.max_chunks: 100
+
+[admin]
+power: 2
+default_op_rank: true
+ftbutilities.claims.max_chunks: 100

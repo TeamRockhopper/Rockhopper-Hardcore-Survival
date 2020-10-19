@@ -108,6 +108,31 @@ app.post('/', verifyPostData, async function (req, res) {
 		await execShellCommand('cp -r upload/ /var/www/rockhopper/minecraft/pack/');
 		console.log(`  >  Deployed new modpack build to web for download ...`);
 
+		// Delete any local server uploads from the pack.
+		await execShellCommand('rm -rf server-upload/');
+		console.log(`  >  Removed old local modpack server build files ...`);
+
+		// Build the updated modpack into server files.
+		await execShellCommand(`java -cp ../launcher/builder.jar com.skcraft.launcher.builder.ServerCopyExport --source ../modpack-files/src --dest server-upload`);
+		console.log(`  >  Built updated server files ...`);
+
+		// Count-down, save, and stop the Minecraft server.
+		await execShellCommand('screen -r -d rockhopper-modded; say automated beep');
+		console.log(`  >  Stopped the Minecraft server ...`);
+
+		// Delete the mods and configuration files that are present on the server.
+		// await execShellCommand('rm -rf ~/mc-rockhopper-survival/mods/');
+		// await execShellCommand('rm -rf ~/mc-rockhopper-survival/config/');
+		console.log(`  >  Removed mods and configuration files from the server ...`);
+
+		// Copy the newly-packaged server content into the server.
+		// await execShellCommand('cp -r server-upload/ ~/mc-rockhopper-survival');
+		console.log(`  >  Removed mods and configuration files from the server ...`);
+
+		// Restart the server.
+		// TODO.
+		console.log(`  >  Restarted the Minecraft server ...`);
+
 		// All done!
 		console.log(`  >  Modpack update complete!`);
 

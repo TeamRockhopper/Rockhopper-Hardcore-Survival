@@ -20,11 +20,11 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
-    "FOREST",
-    "MEGA_TAIGA_TREES",
-    "COLD",
     "CONIFEROUS",
-    "THEMED_TREES"
+    "FOREST",
+    "THEMED_TREES",
+    "COLD",
+    "MEGA_TAIGA_TREES"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -122,13 +122,13 @@
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityDweller",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityAshen",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },

@@ -21,9 +21,9 @@
   "Enable Snow": false,
   "Dictionary Types": [
     "BIRCH_TREES",
-    "DENSE",
-    "FOREST",
     "SPOOKY",
+    "FOREST",
+    "DENSE",
     "THEMED_TREES"
   ],
   "BiomeManager Entries": {
@@ -114,13 +114,13 @@
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityDweller",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityAshen",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },

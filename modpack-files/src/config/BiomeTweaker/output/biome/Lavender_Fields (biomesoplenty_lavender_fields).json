@@ -20,9 +20,9 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
-    "LUSH",
     "PLAINS",
-    "MAGICAL"
+    "MAGICAL",
+    "LUSH"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -126,7 +126,7 @@
       "Entity Class": "familiarfauna.entities.EntityButterfly",
       "Weight": 1,
       "Min Group Count": 2,
-      "Max Group Count": 4
+      "Max Group Count": 12
     }
   ],
   "Spawn Biome": false,

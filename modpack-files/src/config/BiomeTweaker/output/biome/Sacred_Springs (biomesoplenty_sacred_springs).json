@@ -20,13 +20,13 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
-    "DENSE",
-    "LUSH",
-    "RARE",
-    "FOREST",
-    "WET",
     "MAGICAL",
-    "JUNGLE"
+    "WET",
+    "FOREST",
+    "DENSE",
+    "RARE",
+    "JUNGLE",
+    "LUSH"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -136,7 +136,7 @@
       "Entity Class": "familiarfauna.entities.EntityButterfly",
       "Weight": 1,
       "Min Group Count": 2,
-      "Max Group Count": 4
+      "Max Group Count": 12
     }
   ],
   "Spawn Biome": false,

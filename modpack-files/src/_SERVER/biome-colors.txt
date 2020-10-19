@@ -1,0 +1,332 @@
+Ocean;0;grass;142,185,113
+Ocean;0;foliage;113,167,77
+Plains;1;grass;145,189,89
+Plains;1;foliage;119,171,47
+Desert;2;grass;191,183,85
+Desert;2;foliage;174,164,42
+Extreme Hills;3;grass;138,182,137
+Extreme Hills;3;foliage;109,163,107
+Forest;4;grass;121,192,90
+Forest;4;foliage;89,174,48
+Taiga;5;grass;134,183,131
+Taiga;5;foliage;104,164,100
+Swampland;6;grass;106,196,78
+Swampland;6;foliage;69,180,33
+River;7;grass;142,185,113
+River;7;foliage;113,167,77
+Hell;8;grass;191,183,85
+Hell;8;foliage;174,164,42
+The End;9;grass;142,185,113
+The End;9;foliage;113,167,77
+FrozenOcean;10;grass;128,180,151
+FrozenOcean;10;foliage;96,161,123
+FrozenRiver;11;grass;128,180,151
+FrozenRiver;11;foliage;96,161,123
+Ice Plains;12;grass;128,180,151
+Ice Plains;12;foliage;96,161,123
+Ice Mountains;13;grass;128,180,151
+Ice Mountains;13;foliage;96,161,123
+MushroomIsland;14;grass;85,201,63
+MushroomIsland;14;foliage;43,187,15
+MushroomIslandShore;15;grass;85,201,63
+MushroomIslandShore;15;foliage;43,187,15
+Beach;16;grass;145,189,89
+Beach;16;foliage;119,171,47
+DesertHills;17;grass;191,183,85
+DesertHills;17;foliage;174,164,42
+ForestHills;18;grass;121,192,90
+ForestHills;18;foliage;89,174,48
+TaigaHills;19;grass;134,183,131
+TaigaHills;19;foliage;104,164,100
+Extreme Hills Edge;20;grass;138,182,137
+Extreme Hills Edge;20;foliage;109,163,107
+Jungle;21;grass;89,201,60
+Jungle;21;foliage;48,187,11
+JungleHills;22;grass;89,201,60
+JungleHills;22;foliage;48,187,11
+JungleEdge;23;grass;100,199,63
+JungleEdge;23;foliage;62,184,15
+Deep Ocean;24;grass;142,185,113
+Deep Ocean;24;foliage;113,167,77
+Stone Beach;25;grass;138,182,137
+Stone Beach;25;foliage;109,163,107
+Cold Beach;26;grass;131,181,147
+Cold Beach;26;foliage;100,162,120
+Birch Forest;27;grass;136,187,102
+Birch Forest;27;foliage;107,169,64
+Birch Forest Hills;28;grass;136,187,102
+Birch Forest Hills;28;foliage;107,169,64
+Roofed Forest;29;grass;121,192,90
+Roofed Forest;29;foliage;89,174,48
+Cold Taiga;30;grass;128,180,151
+Cold Taiga;30;foliage;96,161,123
+Cold Taiga Hills;31;grass;128,180,151
+Cold Taiga Hills;31;foliage;96,161,123
+Mega Taiga;32;grass;134,184,127
+Mega Taiga;32;foliage;104,165,95
+Mega Taiga Hills;33;grass;134,184,127
+Mega Taiga Hills;33;foliage;104,165,95
+Extreme Hills+;34;grass;138,182,137
+Extreme Hills+;34;foliage;109,163,107
+Savanna;35;grass;191,183,85
+Savanna;35;foliage;174,164,42
+Savanna Plateau;36;grass;191,183,85
+Savanna Plateau;36;foliage;174,164,42
+Mesa;37;grass;191,183,85
+Mesa;37;foliage;174,164,42
+Mesa Plateau F;38;grass;191,183,85
+Mesa Plateau F;38;foliage;174,164,42
+Mesa Plateau;39;grass;191,183,85
+Mesa Plateau;39;foliage;174,164,42
+Gravel Beach;40;grass;141,187,104
+Gravel Beach;40;foliage;114,169,65
+White Beach;41;grass;76,204,53
+White Beach;41;foliage;33,190,2
+Origin Beach;42;grass;136,187,102
+Origin Beach;42;foliage;107,169,64
+Alps;43;grass;128,180,151
+Alps;43;foliage;96,161,123
+Bamboo Forest;44;grass;100,198,66
+Bamboo Forest;44;foliage;61,183,20
+Bayou;45;grass;89,201,60
+Bayou;45;foliage;48,187,11
+Bog;46;grass;127,188,109
+Bog;46;foliage;96,170,72
+Boreal Forest;47;grass;138,183,128
+Boreal Forest;47;foliage;108,164,96
+Brushland;48;grass;178,185,82
+Brushland;48;foliage;159,167,38
+Chaparral;49;grass;145,189,89
+Chaparral;49;foliage;119,171,47
+Cherry Blossom Grove;50;grass;129,188,105
+Cherry Blossom Grove;50;foliage;97,170,67
+Cold Desert;51;grass;141,181,138
+Cold Desert;51;foliage;112,162,108
+Coniferous Forest;52;grass;141,185,116
+Coniferous Forest;52;foliage;113,166,82
+Crag;53;grass;142,185,113
+Crag;53;foliage;113,167,77
+Dead Forest;54;grass;142,182,129
+Dead Forest;54;foliage;114,163,97
+Dead Swamp;55;grass;122,190,98
+Dead Swamp;55;foliage;89,173,59
+Eucalyptus Forest;56;grass;89,201,60
+Eucalyptus Forest;56;foliage;48,187,11
+Fen;57;grass;144,184,121
+Fen;57;foliage;115,165,87
+Flower Field;58;grass;127,191,92
+Flower Field;58;foliage;96,174,51
+Grassland;59;grass;131,189,101
+Grassland;59;foliage;101,171,62
+Grove;60;grass;127,189,100
+Grove;60;foliage;95,172,60
+Highland;61;grass;127,189,100
+Highland;61;foliage;95,172,60
+Land of Lakes;62;grass;127,188,109
+Land of Lakes;62;foliage;96,170,72
+Lavender Fields;63;grass;127,191,92
+Lavender Fields;63;foliage;96,174,51
+Lush Desert;64;grass;142,192,72
+Lush Desert;64;foliage;114,175,26
+Lush Swamp;65;grass;109,194,87
+Lush Swamp;65;foliage;72,178,44
+Mangrove;66;grass;154,188,87
+Mangrove;66;foliage;129,170,45
+Maple Woods;67;grass;134,183,131
+Maple Woods;67;foliage;104,164,100
+Marsh;68;grass;127,189,100
+Marsh;68;foliage;95,172,60
+Meadow;69;grass;136,185,119
+Meadow;69;foliage;106,167,85
+Moor;70;grass;117,191,97
+Moor;70;foliage;83,174,57
+Mountain;71;grass;156,183,116
+Mountain;71;foliage;131,163,82
+Mystic Grove;72;grass;121,192,90
+Mystic Grove;72;foliage;89,174,48
+Ominous Woods;73;grass;136,187,102
+Ominous Woods;73;foliage;107,169,64
+Orchard;74;grass;127,191,92
+Orchard;74;foliage;96,174,51
+Outback;75;grass;185,185,83
+Outback;75;foliage;167,165,41
+Overgrown Cliffs;76;grass;106,198,64
+Overgrown Cliffs;76;foliage;69,182,17
+Prairie;77;grass;153,187,91
+Prairie;77;foliage;129,169,50
+Quagmire;78;grass;122,190,98
+Quagmire;78;foliage;89,173,59
+Rainforest;79;grass;78,203,57
+Rainforest;79;foliage;35,189,7
+RedwoodForest;80;grass;127,191,92
+RedwoodForest;80;foliage;96,174,51
+Sacred Springs;81;grass;100,198,71
+Sacred Springs;81;foliage;62,182,26
+Seasonal Forest;82;grass;133,185,118
+Seasonal Forest;82;foliage;103,167,84
+Shield;83;grass;133,185,118
+Shield;83;foliage;103,167,84
+Shrubland;84;grass;164,183,110
+Shrubland;84;foliage;140,164,74
+Snowy Coniferous Forest;85;grass;128,180,151
+Snowy Coniferous Forest;85;foliage;96,161,123
+Snowy Forest;86;grass;128,180,151
+Snowy Forest;86;foliage;96,161,123
+Steppe;87;grass;168,184,99
+Steppe;87;foliage;146,165,60
+Temperate Rainforest;88;grass;103,196,80
+Temperate Rainforest;88;foliage;65,181,36
+Tropical Rainforest;89;grass;71,205,51
+Tropical Rainforest;89;foliage;26,191,0
+Tundra;90;grass;136,182,136
+Tundra;90;foliage;107,163,106
+Wasteland;91;grass;191,183,85
+Wasteland;91;foliage;174,164,42
+Wetland;92;grass;131,189,101
+Wetland;92;foliage;101,171,62
+Woodland;93;grass;140,189,95
+Woodland;93;foliage;112,171,56
+Xeric Shrubland;94;grass;178,185,82
+Xeric Shrubland;94;foliage;159,167,38
+AlpsFoothills;95;grass;128,180,151
+AlpsFoothills;95;foliage;96,161,123
+MountainFoothills;96;grass;156,183,116
+MountainFoothills;96;foliage;131,163,82
+RedwoodForestEdge;97;grass;127,191,92
+RedwoodForestEdge;97;foliage;96,174,51
+Pasture;98;grass;153,187,91
+Pasture;98;foliage;129,169,50
+Glacier;99;grass;128,180,151
+Glacier;99;foliage;96,161,123
+Oasis;100;grass;130,194,69
+Oasis;100;foliage;100,178,22
+SnowyTundra;101;grass;128,180,151
+SnowyTundra;101;foliage;96,161,123
+Coral Reef;102;grass;142,185,113
+Coral Reef;102;foliage;113,167,77
+Kelp Forest;103;grass;142,185,113
+Kelp Forest;103;foliage;113,167,77
+Origin Island;104;grass;136,187,102
+Origin Island;104;foliage;107,169,64
+Tropical Island;105;grass;78,203,57
+Tropical Island;105;foliage;35,189,7
+Volcanic Island;106;grass;166,187,78
+Volcanic Island;106;foliage;145,169,34
+Flower Island;107;grass;114,194,80
+Flower Island;107;foliage;78,178,36
+Corrupted Sands;108;grass;191,183,85
+Corrupted Sands;108;foliage;174,164,42
+Fungi Forest;109;grass;191,183,85
+Fungi Forest;109;foliage;174,164,42
+Phantasmagoric Inferno;110;grass;191,183,85
+Phantasmagoric Inferno;110;foliage;174,164,42
+Undergarden;111;grass;191,183,85
+Undergarden;111;foliage;174,164,42
+Visceral Heap;112;grass;191,183,85
+Visceral Heap;112;foliage;174,164,42
+Magical Forest;113;grass;145,189,89
+Magical Forest;113;foliage;119,171,47
+Eerie;114;grass;138,191,87
+Eerie;114;foliage;109,174,44
+Outer Lands;115;grass;162,186,93
+Outer Lands;115;foliage;139,168,53
+Twilight Lake;116;grass;112,193,91
+Twilight Lake;116;foliage;76,176,49
+Twilight Forest;117;grass;142,185,113
+Twilight Forest;117;foliage;113,167,77
+Dense Twilight Forest;118;grass;121,192,90
+Dense Twilight Forest;118;foliage;89,174,48
+Twilight Highlands;119;grass;136,185,119
+Twilight Highlands;119;foliage;106,167,85
+Mushroom Forest;120;grass;114,194,80
+Mushroom Forest;120;foliage;78,178,36
+Twilight Swamp;121;grass;106,196,78
+Twilight Swamp;121;foliage;69,180,33
+Twilight Stream;122;grass;156,183,116
+Twilight Stream;122;foliage;131,163,82
+Snowy Forest;123;grass;131,182,144
+Snowy Forest;123;foliage;100,162,115
+Twilight Glacier;124;grass;128,180,151
+Twilight Glacier;124;foliage;96,161,123
+Twilight Clearing;125;grass;145,189,89
+Twilight Clearing;125;foliage;119,171,47
+Oak Savanna;126;grass;185,183,91
+Oak Savanna;126;foliage;166,164,50
+The Void;127;grass;142,185,113
+The Void;127;foliage;113,167,77
+Firefly Forest;128;grass;124,189,107
+Firefly Forest;128;foliage;91,171,70
+Sunflower Plains;129;grass;145,189,89
+Sunflower Plains;129;foliage;119,171,47
+Desert M;130;grass;191,183,85
+Desert M;130;foliage;174,164,42
+Extreme Hills M;131;grass;138,182,137
+Extreme Hills M;131;foliage;109,163,107
+Flower Forest;132;grass;121,192,90
+Flower Forest;132;foliage;89,174,48
+Taiga M;133;grass;134,183,131
+Taiga M;133;foliage;104,164,100
+Swampland M;134;grass;106,196,78
+Swampland M;134;foliage;69,180,33
+Deep Mushroom Forest;135;grass;97,198,75
+Deep Mushroom Forest;135;foliage;59,182,30
+Dark Forest;136;grass;121,192,90
+Dark Forest;136;foliage;89,174,48
+Enchanted Forest;137;grass;142,185,113
+Enchanted Forest;137;foliage;113,167,77
+Fire Swamp;138;grass;142,192,72
+Fire Swamp;138;foliage;114,175,26
+Dark Forest Center;139;grass;142,185,113
+Dark Forest Center;139;foliage;113,167,77
+Ice Plains Spikes;140;grass;128,180,151
+Ice Plains Spikes;140;foliage;96,161,123
+Final Plateau;141;grass;144,182,130
+Final Plateau;141;foliage;116,163,98
+Thornlands;142;grass;144,182,130
+Thornlands;142;foliage;116,163,98
+WyvernLair;143;grass;142,185,113
+WyvernLair;143;foliage;113,167,77
+Patchy Islands;144;grass;106,196,78
+Patchy Islands;144;foliage;69,180,33
+Swamplands;145;grass;106,196,78
+Swamplands;145;foliage;69,180,33
+Deep Waters;146;grass;106,196,78
+Deep Waters;146;foliage;69,180,33
+Coarse Islands;147;grass;106,196,78
+Coarse Islands;147;foliage;69,180,33
+Sludge Plains;148;grass;106,196,78
+Sludge Plains;148;foliage;69,180,33
+Jungle M;149;grass;89,201,60
+Jungle M;149;foliage;48,187,11
+Marsh 0;150;grass;106,196,78
+Marsh 0;150;foliage;69,180,33
+JungleEdge M;151;grass;100,199,63
+JungleEdge M;151;foliage;62,184,15
+Marsh 1;152;grass;106,196,78
+Marsh 1;152;foliage;69,180,33
+Swamplands Clearing;153;grass;106,196,78
+Swamplands Clearing;153;foliage;69,180,33
+Birch Forest M;155;grass;136,187,102
+Birch Forest M;155;foliage;107,169,64
+Birch Forest Hills M;156;grass;136,187,102
+Birch Forest Hills M;156;foliage;107,169,64
+Roofed Forest M;157;grass;121,192,90
+Roofed Forest M;157;foliage;89,174,48
+Cold Taiga M;158;grass;128,180,151
+Cold Taiga M;158;foliage;96,161,123
+Mega Spruce Taiga;160;grass;134,183,131
+Mega Spruce Taiga;160;foliage;104,164,100
+Redwood Taiga Hills M;161;grass;134,183,131
+Redwood Taiga Hills M;161;foliage;104,164,100
+Extreme Hills+ M;162;grass;138,182,137
+Extreme Hills+ M;162;foliage;109,163,107
+Savanna M;163;grass;191,183,85
+Savanna M;163;foliage;174,164,42
+Savanna Plateau M;164;grass;191,183,85
+Savanna Plateau M;164;foliage;174,164,42
+Mesa (Bryce);165;grass;191,183,85
+Mesa (Bryce);165;foliage;174,164,42
+Mesa Plateau F M;166;grass;191,183,85
+Mesa Plateau F M;166;foliage;174,164,42
+Mesa Plateau M;167;grass;191,183,85
+Mesa Plateau M;167;foliage;174,164,42

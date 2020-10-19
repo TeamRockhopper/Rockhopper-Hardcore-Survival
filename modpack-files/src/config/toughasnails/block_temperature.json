@@ -6,14 +6,14 @@
         "burning": "true"
       }
     },
-    "temperature": 5.0
+    "temperature": 6.0
   },
   {
     "state": {
       "block": "minecraft:lit_furnace",
       "properties": {}
     },
-    "temperature": 3.0
+    "temperature": 12.0
   },
   {
     "state": {
@@ -42,5 +42,25 @@
       "properties": {}
     },
     "temperature": 5.0
+  },
+  {
+    "state": {
+      "block": "toughasnails:temperature_coil",
+      "properties": {
+        "powered": "true",
+        "variant": "heating"
+      }
+    },
+    "temperature": 10.0
+  },
+  {
+    "state": {
+      "block": "toughasnails:temperature_coil",
+      "properties": {
+        "powered": "true",
+        "variant": "cooling"
+      }
+    },
+    "temperature": -10.0
   }
 ]

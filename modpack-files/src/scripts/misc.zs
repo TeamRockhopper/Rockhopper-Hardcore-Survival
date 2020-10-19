@@ -53,3 +53,19 @@ recipes.removeShaped(<minecraft:leather_boots>);
 recipes.addShaped(<minecraft:leather_boots>,
 	[[<harvestcraft:hardenedleatheritem>, null, <harvestcraft:hardenedleatheritem>],
 	[<harvestcraft:hardenedleatheritem>, null, <harvestcraft:hardenedleatheritem>]]);
+
+// Add a recipe for crating bee nests.
+recipes.addShaped(<minecraftfuture:bee_nest>,
+	[[<harvestcraft:waxcomb>, <harvestcraft:waxcomb>, <harvestcraft:waxcomb>],
+	[<harvestcraft:waxcomb>, <harvestcraft:queenbeeitem>, <harvestcraft:waxcomb>],
+	[<harvestcraft:waxcomb>, <harvestcraft:waxcomb>, <harvestcraft:waxcomb>]]);
+
+// Add a recipe for crafting bee spawning eggs.
+recipes.addShaped(<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraftfuture:bee"}}),
+	[[<ore:slimeball>, <ore:slimeball>, <ore:slimeball>],
+	[<ore:slimeball>, <harvestcraft:queenbeeitem>, <ore:slimeball>],
+	[<ore:slimeball>, <ore:slimeball>, <ore:slimeball>]]);
+recipes.addShaped(<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraftfuture:bee"}}),
+	[[<ore:slimeball>, <ore:slimeball>, <ore:slimeball>],
+	[<ore:slimeball>, <rustic:bee>, <ore:slimeball>],
+	[<ore:slimeball>, <ore:slimeball>, <ore:slimeball>]]);

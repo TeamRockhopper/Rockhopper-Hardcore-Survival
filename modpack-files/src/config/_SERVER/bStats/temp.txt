@@ -1,0 +1,2 @@
+de.randombyte.ktskript.shaded.org.bstats.sponge.Metrics
+Note: This class only exists for internal purpose. You can ignore it :)

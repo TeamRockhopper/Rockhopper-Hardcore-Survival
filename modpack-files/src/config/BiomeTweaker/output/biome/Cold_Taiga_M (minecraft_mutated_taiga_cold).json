@@ -20,12 +20,12 @@
   "Enable Rain": true,
   "Enable Snow": true,
   "Dictionary Types": [
-    "RARE",
-    "FOREST",
-    "SNOWY",
-    "COLD",
     "CONIFEROUS",
-    "MOUNTAIN"
+    "SNOWY",
+    "MOUNTAIN",
+    "FOREST",
+    "RARE",
+    "COLD"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -123,13 +123,13 @@
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityDweller",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityAshen",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },

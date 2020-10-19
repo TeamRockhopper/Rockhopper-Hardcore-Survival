@@ -20,10 +20,10 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
+    "MEGA_TAIGA_SPRUCE_TREES",
+    "FOREST",
     "DENSE",
     "RARE",
-    "FOREST",
-    "MEGA_TAIGA_SPRUCE_TREES",
     "THEMED_TREES"
   ],
   "BiomeManager Entries": {},
@@ -122,13 +122,13 @@
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityDweller",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityAshen",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     }

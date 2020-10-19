@@ -1,0 +1,6 @@
+
+{
+  "Name": "human",
+  "Registry ID": "sponge:human",
+  "Class": "org.spongepowered.common.entity.living.human.EntityHuman"
+}

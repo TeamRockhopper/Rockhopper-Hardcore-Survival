@@ -20,9 +20,9 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
-    "RARE",
+    "HILLS",
     "FOREST",
-    "HILLS"
+    "RARE"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -114,13 +114,13 @@
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityDweller",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     },
     {
       "Entity Class": "vazkii.quark.world.entity.EntityAshen",
-      "Weight": 30,
+      "Weight": 10,
       "Min Group Count": 1,
       "Max Group Count": 2
     }
@@ -144,7 +144,7 @@
       "Entity Class": "familiarfauna.entities.EntityButterfly",
       "Weight": 1,
       "Min Group Count": 2,
-      "Max Group Count": 4
+      "Max Group Count": 12
     },
     {
       "Entity Class": "familiarfauna.entities.EntityPixie",

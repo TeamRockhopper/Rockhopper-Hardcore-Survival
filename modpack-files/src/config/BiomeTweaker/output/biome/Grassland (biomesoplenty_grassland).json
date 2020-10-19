@@ -20,9 +20,9 @@
   "Enable Rain": true,
   "Enable Snow": false,
   "Dictionary Types": [
+    "PLAINS",
     "HILLS",
-    "WET",
-    "PLAINS"
+    "WET"
   ],
   "BiomeManager Entries": {},
   "Spawnable Creatures": [
@@ -138,7 +138,7 @@
       "Entity Class": "familiarfauna.entities.EntityButterfly",
       "Weight": 1,
       "Min Group Count": 2,
-      "Max Group Count": 4
+      "Max Group Count": 12
     }
   ],
   "Spawn Biome": true,
@@ -211,8 +211,8 @@
   },
   "BOP Owner": "BIOMESOPLENTY",
   "BOP Weight Map": {
-    "COOL_TEMPERATE": 7,
-    "WET_TEMPERATE": 3
+    "WET_TEMPERATE": 3,
+    "COOL_TEMPERATE": 7
   },
   "BOP Climate Weights": {
     "WET_TEMPERATE": [
