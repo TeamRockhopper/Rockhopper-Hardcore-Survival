@@ -123,7 +123,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Removed old local modpack server build files ...`);
 
 		// Build the updated modpack into server files.
-		// await execShellCommand(`java -cp ../launcher/builder.jar com.skcraft.launcher.builder.ServerCopyExport --source ../modpack-files/src --dest server-upload`);
+		await execShellCommand(`java -cp ../launcher/builder.jar com.skcraft.launcher.builder.ServerCopyExport --source ../modpack-files/src --dest server-upload`);
 		console.log(`  >  Built updated server files ...`);
 
 		// Count-down, save, and stop the Minecraft server.
