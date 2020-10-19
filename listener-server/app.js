@@ -158,7 +158,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Removed mods and configuration files from the server ...`);
 
 		// Copy the newly-packaged server content into the server.
-		await execShellCommand('cp -r server-upload/ ~/mc-rockhopper-survival');
+		await execShellCommand('cp -a server-upload/. ~/mc-rockhopper-survival');
 		console.log(`  >  Copied new server content to the server ...`);
 
 		// Restart the server.
