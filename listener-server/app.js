@@ -162,7 +162,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Copied new server content to the server ...`);
 
 		// Restart the server.
-		// await execShellCommand('cd ~/mc-rockhopper-survival; ~/mc-rockhopper-survival/start_server.sh');
+		await execShellCommand('cd ~/mc-rockhopper-survival; ~/mc-rockhopper-survival/start_server.sh');
 		console.log(`  >  Restarted the Minecraft server ...`);
 
 		// All done!
