@@ -172,10 +172,13 @@ app.post('/', verifyPostData, async function (req, res) {
 		await execShellCommand('cp -a server-upload/. ~/mc-rockhopper-survival');
 		console.log(`  >  Copied new server content to the server ...`);
 
-		// Restart the server.
+		// Restart the Minecraft server.
+		const logfile = 'spawned-server.log';
+		const out = fs.openSync(logfile, 'a');
+		const err = fs.openSync(logfile, 'a');
 		spawn('bash', [ '~/mc-rockhopper-survival/start_server.sh' ], {
 			detached: true,
-			stdio: 'ignore'
+			stdio: [ 'ignore', out, err ]
 		}).unref();
 		console.log(`  >  Restarted the Minecraft server ...`);
 
