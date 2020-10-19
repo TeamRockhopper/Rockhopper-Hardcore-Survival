@@ -67,6 +67,10 @@ app.post('/', verifyPostData, async function (req, res) {
 		let commitId = req.body.after.substring(0, 12);
 		console.log(`  >  Detected new commit ${commitId} ...`);
 
+		// Delete the modpack-files directory to ensure we pull fresh.
+		await execShellCommand('rm -rf ../modpack-files');
+		console.log(`  >  Deleted old modpack content to ensure we pull fresh ...`);
+
 		// Update the repository locally.
 		await execShellCommand('git pull');
 		console.log(`  >  Pulled most recent files from git ...`);
