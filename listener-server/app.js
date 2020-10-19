@@ -23,6 +23,11 @@ const PORT = process.env.PORT;
 const SECRET = process.env.SECRET;
 const RCON_PASSWORD = process.env.RCON_PASSWORD;
 
+// A helper function to sleep asynchronously.
+const sleep = function (ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+};
+
 // A middleware for validating webhooks from GitHub.
 const sigHeaderName = 'X-Hub-Signature';
 const verifyPostData = function (req, res, next) {
@@ -40,6 +45,8 @@ const verifyPostData = function (req, res, next) {
   return next();
 };
 
+// A function to restart this listener server process automatically.
+// Currently unused.
 const restartProcess = function () {
 	const logfile = 'listener-restart.log';
 	const out = fs.openSync(logfile, 'a');
@@ -119,11 +126,29 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Built updated server files ...`);
 
 		// Count-down, save, and stop the Minecraft server.
-		// TODO.
 		const rcon = await Rcon.connect({
 			host: 'localhost', port: 4000, password: `${RCON_PASSWORD}`
 		});
-		console.log(await rcon.send("list"));
+		await rcon.send('say There has been a modpack update.');
+		await sleep(500);
+		await rcon.send('say Please update your modpack client using the launcher.');
+		await sleep(500);
+		await rcon.send('say The server will restart in 30 seconds.');
+		await sleep(5000);
+		await rcon.send('say The server will restart in 25 seconds.');
+		await sleep(5000);
+		await rcon.send('say The server will restart in 20 seconds.');
+		await sleep(5000);
+		await rcon.send('say The server will restart in 15 seconds.');
+		await sleep(5000);
+		await rcon.send('say The server will restart in 10 seconds.');
+		await sleep(5000);
+		await rcon.send('say The server will restart in 5 seconds.');
+		await sleep(5000);
+		await rcon.send('say The server is restarting now!');
+		await sleep(500);
+		await rcon.send('save-all');
+		await rcon.send('stop');
 		console.log(`  >  Stopped the Minecraft server ...`);
 
 		// Delete the mods and configuration files that are present on the server.
@@ -133,10 +158,10 @@ app.post('/', verifyPostData, async function (req, res) {
 
 		// Copy the newly-packaged server content into the server.
 		// await execShellCommand('cp -r server-upload/ ~/mc-rockhopper-survival');
-		console.log(`  >  Removed mods and configuration files from the server ...`);
+		console.log(`  >  Copied new server content to the server ...`);
 
 		// Restart the server.
-		// TODO.
+		await execShellCommand('~/mc-rockhopper-survival/start_server.sh');
 		console.log(`  >  Restarted the Minecraft server ...`);
 
 		// All done!
