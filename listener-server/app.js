@@ -176,7 +176,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		const logfile = 'spawned-server.log';
 		const out = fs.openSync(logfile, 'a');
 		const err = fs.openSync(logfile, 'a');
-		spawn('java', [ '-Dfml.queryResult=confirm', '-server', '-XX:+UseG1GC', '-XX:MaxGCPauseMillis=100', '-XX:+UseStringDeduplication', '-XX:+UseAES', '-XX:+UseAESIntrinsics', '-Xmx24G', '-Xms8G', '-XX:UseSSE=3', '-jar', '~/mc-rockhopper-survival/modpack', 'nogui' ], {
+		spawn('java', [ '-Dfml.queryResult=confirm', '-server', '-XX:+UseG1GC', '-XX:MaxGCPauseMillis=100', '-XX:+UseStringDeduplication', '-XX:+UseAES', '-XX:+UseAESIntrinsics', '-Xmx24G', '-Xms8G', '-XX:UseSSE=3', '-jar', '/home/tim/mc-rockhopper-survival/modpack.jar', 'nogui' ], {
 			detached: true,
 			stdio: [ 'ignore', out, err ]
 		}).unref();
