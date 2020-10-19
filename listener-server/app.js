@@ -153,16 +153,16 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Stopped the Minecraft server ...`);
 
 		// Delete the mods and configuration files that are present on the server.
-		// await execShellCommand('rm -rf ~/mc-rockhopper-survival/mods/');
-		// await execShellCommand('rm -rf ~/mc-rockhopper-survival/config/');
+		await execShellCommand('rm -rf ~/mc-rockhopper-survival/mods/');
+		await execShellCommand('rm -rf ~/mc-rockhopper-survival/config/');
 		console.log(`  >  Removed mods and configuration files from the server ...`);
 
 		// Copy the newly-packaged server content into the server.
-		// await execShellCommand('cp -r server-upload/ ~/mc-rockhopper-survival');
+		await execShellCommand('cp -r server-upload/ ~/mc-rockhopper-survival');
 		console.log(`  >  Copied new server content to the server ...`);
 
 		// Restart the server.
-		await execShellCommand('cd ~/mc-rockhopper-survival; ~/mc-rockhopper-survival/start_server.sh');
+		await execShellCommand('cd ~/mc-rockhopper-survival; ~/mc-rockhopper-survival/start_server.sh &');
 		console.log(`  >  Restarted the Minecraft server ...`);
 
 		// All done!
