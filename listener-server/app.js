@@ -76,6 +76,9 @@ app.post('/', verifyPostData, async function (req, res) {
 		let commitId = req.body.after.substring(0, 12);
 		console.log(`  >  Detected new commit ${commitId} ...`);
 
+		// Tell GitHub we received the request.
+	  res.status(200).send('Request body was signed.');
+
 		// To ensure we do not use stale modpack information, delete it.
 		await execShellCommand('rm -rf ../modpack-files/src/');
 		console.log(`  >  Deleted previous local modpack content ...`);
@@ -194,9 +197,6 @@ app.post('/', verifyPostData, async function (req, res) {
 
 	// Restart this listening server.
 	console.log('');
-
-	// Tell GitHub we completed the request.
-  res.status(200).send('Request body was signed.');
 });
 
 // Use a middleware that allows us to validate incoming webhooks against GitHub.
