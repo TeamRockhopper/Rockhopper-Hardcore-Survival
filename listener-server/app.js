@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 const APPLICATION = process.env.APPLICATION;
 const PORT = process.env.PORT;
 const SECRET = process.env.SECRET;
+const RCON_PORT = process.env.RCON_PORT;
 const RCON_PASSWORD = process.env.RCON_PASSWORD;
 
 // A helper function to sleep asynchronously.
@@ -136,7 +137,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		// Count-down, save, and stop the Minecraft server.
 		try {
 			const rcon = await Rcon.connect({
-				host: 'localhost', port: 4000, password: `${RCON_PASSWORD}`
+				host: 'localhost', port: `${RCON_PORT}`, password: `${RCON_PASSWORD}`
 			});
 			await rcon.send('say There has been a modpack update.');
 			await sleep(500);
@@ -197,6 +198,27 @@ app.post('/', verifyPostData, async function (req, res) {
 
 	// Restart this listening server.
 	console.log('');
+});
+
+// Support pushing a command to the running server.
+app.post('/command', async function (req, res) {
+	let command = req.body.command;
+	try {
+		const rcon = await Rcon.connect({
+			host: 'localhost', port: `${RCON_PORT}`, password: `${RCON_PASSWORD}`
+		});
+		let response = await rcon.send(command);
+		res.send({
+			response: response
+		});
+
+	// The Minecraft server may not be running; catch this error and continue.
+	} catch (rconError) {
+		res.send({
+			message: 'The Minecraft server may not be running.',
+			error: rconError
+		});
+	}
 });
 
 // Use a middleware that allows us to validate incoming webhooks against GitHub.
