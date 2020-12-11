@@ -111,20 +111,23 @@ app.post('/', verifyPostData, async function (req, res) {
 		      version: `${commitId}`,
 		      location: 'rockhopper.json',
 		      priority: 0
-		    }
+		    },
+				{
+					title: 'Rockhopper Airship Survival',
+					name: 'rockhopper-airships',
+					version: `${commitId}`,
+					location: 'rockhopper-airships.json',
+					priority: 1
+				}
 		  ]
 		};
 		const json = JSON.stringify(packageData, null, 2);
 		await fs.writeFile('upload/packages.json', json)
 		console.log(`  >  Wrote updated package listing to file ...`);
 
-		// Delete the web-hosted upload files for the pack.
-		await execShellCommand('rm -rf /var/www/rockhopper/minecraft/pack/');
-		console.log(`  >  Removed old web-hosted modpack build files ...`);
-
 		// Copy our new local build files to the web upload location.
 		await execShellCommand('cp -r upload/ /var/www/rockhopper/minecraft/pack/');
-		console.log(`  >  Deployed new modpack build to web for download ...`);
+		console.log(`  >  Copied new modpack build to web for download ...`);
 
 		// Delete any local server uploads from the pack.
 		await execShellCommand('rm -rf server-upload/');
@@ -180,7 +183,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		const logfile = 'spawned-server.log';
 		const out = fs.openSync(logfile, 'a');
 		const err = fs.openSync(logfile, 'a');
-		spawn('java', [ '-Dfml.queryResult=confirm', '-server', '-XX:+UseG1GC', '-XX:MaxGCPauseMillis=100', '-XX:+UseStringDeduplication', '-XX:+UseAES', '-XX:+UseAESIntrinsics', '-Xmx24G', '-Xms8G', '-XX:UseSSE=3', '-jar', 'modpack.jar', 'nogui' ], {
+		spawn('java', [ '-Dfml.queryResult=confirm', '-server', '-XX:+UseG1GC', '-XX:MaxGCPauseMillis=100', '-XX:+UseStringDeduplication', '-XX:+UseAES', '-XX:+UseAESIntrinsics', '-Xmx13G', '-Xms8G', '-XX:UseSSE=3', '-jar', 'modpack.jar', 'nogui' ], {
 			cwd: '/home/tim/mc-rockhopper-survival/',
 			detached: true,
 			stdio: [ 'ignore', out, err ]
