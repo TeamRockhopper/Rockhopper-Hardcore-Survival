@@ -23,6 +23,7 @@ const PORT = process.env.PORT;
 const SECRET = process.env.SECRET;
 const RCON_PORT = process.env.RCON_PORT;
 const RCON_PASSWORD = process.env.RCON_PASSWORD;
+const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
 
 // A helper function to sleep asynchronously.
 const sleep = function (ms) {
@@ -88,6 +89,10 @@ app.post('/', verifyPostData, async function (req, res) {
 		await execShellCommand('git fetch');
 		await execShellCommand('git reset --hard origin/master');
 		console.log(`  >  Pulled most recent files from git ...`);
+
+		// The Discord chat bot's token is sensitive, so it must be inserted later.
+		await execShellCommand(`sed -i '22s/.*/        token="${DISCORD_BOT_TOKEN}"/' ../modpack-files/src/config/_SERVER/shadowfacts/DiscordChat/DiscordChat.conf`);
+		console.log(`  > Injecting Discord bot token ...`);
 
 		// Install any potentially-new dependencies.
 		await execShellCommand('npm install');
