@@ -126,7 +126,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Wrote updated package listing to file ...`);
 
 		// Copy our new local build files to the web upload location.
-		await execShellCommand('cp -r upload/ /var/www/rockhopper/minecraft/pack/');
+		await execShellCommand('cp -r upload/. /var/www/rockhopper/minecraft/pack/');
 		console.log(`  >  Copied new modpack build to web for download ...`);
 
 		// Delete any local server uploads from the pack.
