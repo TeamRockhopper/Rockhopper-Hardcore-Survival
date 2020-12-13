@@ -69,3 +69,6 @@ recipes.addShaped(<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraftfutur
 	[[<ore:slimeball>, <ore:slimeball>, <ore:slimeball>],
 	[<ore:slimeball>, <rustic:bee>, <ore:slimeball>],
 	[<ore:slimeball>, <ore:slimeball>, <ore:slimeball>]]);
+
+// Add a recipe for converting modded chests into vanilla chests.
+recipes.addShapeless("Convert Chest to Vanilla", <minecraft:chest> * 1, [<ore:chestWood>]);
